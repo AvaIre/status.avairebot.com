@@ -12,3 +12,7 @@ let mix = require('laravel-mix');
  */
 
 mix.sass('resources/assets/sass/avaire.scss', 'public/assets/css');
+
+if (mix.inProduction()) {
+    mix.version();
+}

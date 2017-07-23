@@ -12,7 +12,7 @@
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <link href='https://fonts.googleapis.com/css?family=Miriam+Libre:400,700|Source+Sans+Pro:200,400,700,600,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ elixir('assets/css/avaire.css') }}">
+    <link rel="stylesheet" href="{{ mix('assets/css/avaire.css') }}">
     @yield('styles')
 </head>
 <body class="@yield('body-class', 'home')">
