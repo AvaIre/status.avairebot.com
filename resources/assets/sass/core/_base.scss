@@ -14,6 +14,11 @@ h1, h2, h3, h4 {
 .wrapper {
     width: 980px;
     margin: 20px auto 0px auto;
+
+    @media all and (max-width: 980px) {
+        width: 100%;
+        display: block;
+    }
 }
 
 .container {
@@ -36,6 +41,19 @@ h1, h2, h3, h4 {
 
         img {
             width: 680px;
+        }
+    }
+
+    @media all and (max-width: 800px) {
+        height: 170px;
+        margin-bottom: 30px !important;
+
+        .logo-container {
+            margin: 20px auto 30px;
+
+            img {
+                width: 430px;
+            }
         }
     }
 }
