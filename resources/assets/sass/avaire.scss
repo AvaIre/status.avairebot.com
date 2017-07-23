@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// base
+@import "core/settings";          // color + font variables
+@import "core/normalize";         // css reset
+@import "core/base";              // base helpers and typographical styles
+
+@import "components/footer";      // the footer

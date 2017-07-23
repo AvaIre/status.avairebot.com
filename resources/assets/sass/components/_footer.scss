@@ -1,0 +1,23 @@
+footer.main {
+    background: $background_dark;
+    padding: 35px 20px;
+    text-align: center;
+    border-radius: 8px;
+
+    p {
+        color: $color__light_gray;
+        margin-bottom: 10px;
+        font-family: $font_alt;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 12px;
+
+        a {
+            color: $color__white;
+
+            &:hover {
+                color: $color__cyan;
+            }
+        }
+    }
+}
