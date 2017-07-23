@@ -1,0 +1,40 @@
+.alert {
+    color: $color__white;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    &.alert-success {
+        background: #43b581;
+    }
+
+    &.alert-info {
+        background: #1A79FA;
+    }
+
+    &.alert-warning {
+        background: #faa61a;
+    }
+
+    &.alert-danger {
+        background: #FA441A;
+    }
+
+    .alert-link {
+        color: $color__white;
+        text-decoration: underline;
+    }
+
+    .font-large {
+        font-weight: 500;
+        font-size: 1.90rem;
+        line-height: 1.8125rem;
+    }
+
+    .last-updated {
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.8);
+        float: right;
+        position: relative;
+        right: 7px;
+    }
+}
