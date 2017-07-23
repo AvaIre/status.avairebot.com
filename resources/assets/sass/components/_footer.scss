@@ -3,6 +3,7 @@ footer.main {
     padding: 35px 20px;
     text-align: center;
     border-radius: 8px;
+    display: block;
 
     p {
         color: $color__light_gray;
@@ -19,5 +20,5 @@ footer.main {
                 color: $color__cyan;
             }
         }
-    }
+    } 
 }

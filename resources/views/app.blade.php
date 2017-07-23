@@ -27,19 +27,13 @@
 
     <div class="wrapper">
         @yield('content')
-
-        <div class="conatiner">
-            <div class="row">
-                <div class="col-md-12">
-                    <footer class="main">
-                        <p class="text-center">
-                            Created by <a target="blank" href="https://senither.com">Alexis Tan</a>, powered by <a target="blank" href="https://m.do.co/c/9f589c4101c3">DigitalOcean</a> and <a target="blank" href="http://getbootstrap.com/">Bootstrap</a>
-                            <br>"Discord", "Discord App", and any associated logos are registered trademarks of Hammer &amp; Chisel, inc.
-                        </p>
-                    </footer>
-                </div>
-            </div>
-        </div>
     </div>
+
+    <footer class="main">
+        <p class="text-center">
+            Created by <a target="blank" href="https://senither.com">Alexis Tan</a>, powered by <a target="blank" href="https://m.do.co/c/9f589c4101c3">DigitalOcean</a> and <a target="blank" href="http://getbootstrap.com/">Bootstrap</a>
+            <br>"Discord", "Discord App", and any associated logos are registered trademarks of Hammer &amp; Chisel, inc.
+        </p>
+    </footer>
 </body>
 </html>
