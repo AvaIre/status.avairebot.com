@@ -1,6 +1,8 @@
 <?php
 
+use App\Report;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/reports', function (Request $request) {
+    return Cache::remember('reports', 10, function () {
+        return Report::orderBy('created_at', 'desc')->take(25)->get();
+    });
 });

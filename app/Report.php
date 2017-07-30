@@ -14,4 +14,13 @@ class Report extends Model
     protected $fillable = [
         'guilds', 'channels', 'users'
     ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'updated_at'
+    ];
 }
