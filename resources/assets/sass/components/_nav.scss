@@ -1,0 +1,21 @@
+.nav-tabs {
+    border-bottom: 1px solid #2E3136;
+
+    & > li {
+        float: right;
+
+        & > a:focus, & > a:hover,
+        &.active > a, &.active > a:focus, &.active > a:hover {
+            color: #aeaeae;
+            background: #2E3136;
+            border-left: 1px solid #4D4F51;
+            border-top: 1px solid #4D4F51;
+            border-right: 1px solid #4D4F51;
+            border-bottom: none;
+        }
+
+        &.tab-title {
+            float: left;
+        }
+    }
+}

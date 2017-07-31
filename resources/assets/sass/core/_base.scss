@@ -1,7 +1,7 @@
 * { box-sizing: border-box; }
 
 body {
-    color: $color__white;
+    color: #aeaeae;
     font-family: $font;
     font-size: 16px;
     background: #36393E;
@@ -9,6 +9,11 @@ body {
 
 h1, h2, h3, h4 {
     -webkit-font-smoothing: antialiased;
+}
+
+h4 {
+    color: #737F8D;
+    text-transform: uppercase;
 }
 
 .wrapper {
@@ -59,7 +64,7 @@ h1, h2, h3, h4 {
 }
 
 a {
-    color: $color__cyan;
+    color: #aeaeae;
     text-decoration: none;
 }
 
