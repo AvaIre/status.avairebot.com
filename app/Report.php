@@ -2,6 +2,8 @@
 
 namespace App;
 
+use DateTime;
+use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 
 class Report extends Model
@@ -23,4 +25,15 @@ class Report extends Model
     protected $hidden = [
         'updated_at'
     ];
+
+    /**
+     * Prepare a date for array / JSON serialization.
+     *
+     * @param  \DateTimeInterface  $date
+     * @return string
+     */
+    protected function serializeDate(DateTimeInterface $date)
+    {
+        return $date->format(DateTime::ISO8601);
+    }
 }
