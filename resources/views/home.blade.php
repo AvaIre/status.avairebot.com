@@ -3,10 +3,12 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="alert alert-info">
+            <div class="alert alert-{{ $status['css'] }}">
                 <span class="font-large">
-                    <strong>Hi there!</strong>
-                    <br>This page is currently under development, you can follow the progress on <a href="https://github.com/AvaIre/status.avairebot.com" class="alert-link">GitHub</a>.
+                    <strong>{{ $status['txt'] }}</strong>
+                </span>
+                <span class="last-updated">
+                    Refreshed {{ $status['ref']->diffForHumans() }}
                 </span>
             </div>
         </div>
