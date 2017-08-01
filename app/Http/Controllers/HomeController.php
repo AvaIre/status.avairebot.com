@@ -40,7 +40,7 @@ class HomeController extends Controller
             return [
                 'css' => 'success',
                 'txt' => 'All Shards Operational',
-                'ref' => Carbon::parse($dbStatus->first()->updated_at)->subHours(2)
+                'ref' => Carbon::parse($dbStatus->first()->updated_at)->subHours(2)->diffInSeconds()
             ];
         }
 
@@ -48,7 +48,7 @@ class HomeController extends Controller
             return [
                 'css' => 'danger',
                 'txt' => 'All Shards are down and not responding',
-                'ref' => Carbon::parse($dbStatus->first()->updated_at)->subHours(2)
+                'ref' => Carbon::parse($dbStatus->first()->updated_at)->subHours(2)->diffInSeconds()
             ];
         }
 
@@ -59,7 +59,7 @@ class HomeController extends Controller
             'txt' => "Shard ID ${ids} are not responding or are slow",
             'ref' => Carbon::parse($dbStatus->filter(function ($item) use ($offline) {
                 return ! $offline->pluck('count')->contains($item->count);
-            })->first()->updated_at)->subHours(2)
+            })->first()->updated_at)->subHours(2)->diffInSeconds()
         ];
     }
 

@@ -8,7 +8,9 @@
                     <strong>{{ $status['txt'] }}</strong>
                 </span>
                 <span class="last-updated">
-                    Refreshed {{ $status['ref']->diffForHumans() }}
+                    Refreshed <span id="refresh-time" data-seconds="{{ $status['ref'] }}">
+                        <i>Loading last refresh date...</i>
+                    </span>
                 </span>
             </div>
         </div>
@@ -44,4 +46,37 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script type="text/javascript">
+        $(function() {
+            var refreshTimeObj = $('#refresh-time');
+            var refreshSeconds = refreshTimeObj.data('seconds');
+
+            var prepareUptimeFormat = function (number, name) {
+                return `${number} ${name}` + (number === 1 ? '' : 's');
+            }
+
+            var incrementSeconds = function () {
+                let h = Math.floor((refreshSeconds % 86400) / 3600);
+                let m = Math.floor(((refreshSeconds % 86400) % 3600) / 60);
+                let s = Math.floor(((refreshSeconds % 86400) % 3600) % 60);
+
+                if (h > 0) {
+                    var refreshMessage = `${prepareUptimeFormat(h, 'hour')}, and ${prepareUptimeFormat(m, 'minute')}`;
+                } else if (m > 0) {
+                    var refreshMessage = prepareUptimeFormat(m, 'minute');
+                } else {
+                    var refreshMessage = prepareUptimeFormat(s, 'second');
+                }
+
+                refreshTimeObj.text(refreshMessage + ' ago');
+                refreshSeconds++;
+            }
+
+            incrementSeconds();
+            setInterval(incrementSeconds, 1000);
+        });
+    </script>
 @endsection

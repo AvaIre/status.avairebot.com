@@ -38,5 +38,6 @@
             <br>"Discord", "Discord App", and any associated logos are registered trademarks of Hammer &amp; Chisel, inc.
         </p>
     </footer>
+    @yield('scripts')
 </body>
 </html>
