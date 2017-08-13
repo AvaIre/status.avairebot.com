@@ -15,8 +15,9 @@ use Illuminate\Support\Facades\Cache;
 |
 */
 
-Route::get('/reports', function (Request $request) {
-    return Cache::remember('reports', 10, function () {
-        return Report::orderBy('created_at', 'desc')->take(25)->get();
-    });
+Route::get('/reports', function (Request $request, $limit = 25) {
+    if ($request->has('limit') && is_numeric($request->get('limit'))) {
+        $limit = max(5, min(150, $request->get('limit')));
+    }
+    return Report::orderBy('created_at', 'desc')->paginate($limit)->appends($request->only('limit'));
 });
