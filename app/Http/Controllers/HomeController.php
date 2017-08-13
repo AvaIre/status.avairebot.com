@@ -12,12 +12,12 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $reports = Cache::remember('reports.week', 10, function () {
-            return Report::orderBy('created_at', 'desc')->take(24)->get()->reverse();
+        $reports = Cache::remember('reports.week', 0, function () {
+            return Report::orderBy('created_at', 'desc')->take(168)->get()->reverse();
         });
 
         $labels = '"' . $reports->map(function ($item) {
-            return $item->created_at->hour . ':00';
+            return $item->created_at->toDayDateTimeString();
         })->implode('", "') . '"';
 
         return view('home', [

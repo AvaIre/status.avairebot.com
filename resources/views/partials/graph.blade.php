@@ -12,6 +12,7 @@ $(function() {
                 borderColor: '#BB1050',
                 data: [<?php echo $obj['data']; ?>],
                 fill: false,
+                pointRadius: 0
             }]
         },
         options: {
@@ -41,9 +42,6 @@ $(function() {
                     },
                     ticks: {
                         callback: function(value, index, values) {
-                            if (index % 4 === 3) {
-                                return value;
-                            }
                             return null;
                         }
                     }
@@ -55,9 +53,6 @@ $(function() {
                     },
                     ticks: {
                         callback: function(value, index, values) {
-                            if (value < 999) {
-                                return value;
-                            }
                             return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                         }
                     }
