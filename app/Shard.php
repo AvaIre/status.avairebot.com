@@ -43,6 +43,6 @@ class Shard extends Model
         ];
 
         $position = array_search('created_at', array_keys($array)) - 1;
-        return array_merge(array_slice($array, 1, $position), $insert, array_slice($array, $position));;
+        return array_merge(array_slice($array, 0, $position), $insert, array_slice($array, $position));;
     }
 }
