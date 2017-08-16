@@ -35,14 +35,14 @@ class Shard extends Model
     {
         $array = parent::toArray();
 
-        $insert = [
+        $status = [
             'status' => [
-                'id' => $this->online,
+                'id' => $this->online ? 1 : 0,
                 'name' => $this->online ? 'online' : 'offline'
             ]
         ];
 
-        $position = array_search('created_at', array_keys($array)) - 1;
-        return array_merge(array_slice($array, 0, $position), $insert, array_slice($array, $position));;
+        $position = array_search('created_at', array_keys($array));
+        return array_merge(array_slice($array, 0, $position), $status, array_slice($array, $position));;
     }
 }
