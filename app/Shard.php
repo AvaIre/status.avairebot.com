@@ -2,7 +2,9 @@
 
 namespace App;
 
+use DateTime;
 use Carbon\Carbon;
+use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 
 class Shard extends Model
@@ -24,6 +26,17 @@ class Shard extends Model
     public function getOnlineAttribute()
     {
         return ! Carbon::parse($this->updated_at)->addMinutes(2)->isPast();
+    }
+
+    /**
+     * Prepare a date for array / JSON serialization.
+     *
+     * @param  \DateTimeInterface  $date
+     * @return string
+     */
+    protected function serializeDate(DateTimeInterface $date)
+    {
+        return $date->format(DateTime::ISO8601);
     }
 
     /**
